@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: whitesmoke;
+    background-color: rgb(190, 190, 190);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,4 +101,10 @@ body{
 #weather-icon{
     width: 150px; 
     height: 150px; 
+}
+
+@media(width <= 768px){
+    #container{
+        width: 350px;
+    }
 }
