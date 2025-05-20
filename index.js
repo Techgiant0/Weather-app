@@ -10,6 +10,8 @@ let sunny = document.getElementById('sunny')
 let rainy = document.getElementById('rainy')
 let alert = document.getElementById('alert')
 
+weatherIcon.classList.add('off')
+
 alert.addEventListener('dblclick',()=>{
     alert.classList.add('off')
 })
@@ -36,4 +38,5 @@ async function getWeather(cityElement){
     const iconCode = res.weather[0].icon
     const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`
     weatherIcon.src = iconUrl
+    weatherIcon.classList.remove('off')
 }
