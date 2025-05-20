@@ -27,6 +27,11 @@ if(city.value.trim() == ''){
     
 async function getWeather(cityElement){
     let req = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityElement.value}&appid=7a09e0b8e571f08263afa200a104ba8a`);
+      if (!req.ok) {
+        alert.classList.remove('off');
+        alert.innerText = 'City does not exist';
+        return;
+  }
     let res = await req.json(); 
     condition.textContent = res.weather[0].main
     highTemp.textContent = Number((res.main.temp_max - 273).toFixed(2))
