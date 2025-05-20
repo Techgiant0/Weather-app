@@ -63,15 +63,18 @@ body{
     font-weight: 400;
 }
 
-.condition{
+#condition{
     font-size: 40px;
     font-weight: 400;
 }
 
 .range{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
     width: 60%;
+    white-space: nowrap;
 }
 
 .high{
@@ -86,4 +89,11 @@ body{
 
 .off{
     display: none; 
+}
+
+#alert{
+    background-color: #fa8383;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid red 2px;
 }
