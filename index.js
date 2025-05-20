@@ -1,6 +1,6 @@
 let city = document.getElementById('city');
 let search = document.getElementById('search');
-let weatherIcon = document.getElementsByClassName('weather-icon')
+let weatherIcon = document.getElementById('weather-icon')
 let temperature = document.getElementById('temp')
 let condition = document.getElementById('condition')
 let highTemp = document.getElementById('hightemp')
@@ -32,5 +32,8 @@ async function getWeather(cityElement){
     condition.textContent = res.weather[0].main
     highTemp.textContent = Number((res.main.temp_max - 273).toFixed(2))
     lowTemp.textContent = Number((res.main.temp_min - 273).toFixed(2))
-    temperature.textContext = Number((res.main.temp - 273).toFixed(2))
+    temperature.innerText = Number((res.main.temp - 273).toFixed(2))
+    const iconCode = res.weather[0].icon
+    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`
+    weatherIcon.src = iconUrl
 }
